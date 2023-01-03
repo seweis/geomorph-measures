@@ -27,7 +27,7 @@ def do_corrections(filename, full_path, out_path):
 
 def process_directory(console=False):
     rel_path = Path(__file__).parent.parent
-    files = next(os.walk(rel_path), (None, None, []))[2]
+    files = next(os.walk(os.path.join(rel_path, 'raw')), (None, None, []))[2]
     out_path = os.path.join(rel_path, 'Farbe_korrigiert')
     if not os.path.exists(out_path):
         os.mkdir(out_path)

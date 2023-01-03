@@ -1,4 +1,3 @@
-*.txt
-*.xlsx
-Farbe_korrigiert/
-Magsusz_korrigiert/
+/Farbe_korrigiert/
+/Magsusz_korrigiert/
+/raw/
