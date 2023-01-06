@@ -30,7 +30,7 @@ def do_corrections(filename, full_path, out_path):
 def process_directory(console=False):
     rel_path = Path(__file__).parent.parent
     files = next(os.walk(os.path.join(rel_path, 'raw')), (None, None, []))[2]
-    out_path = os.path.join(rel_path, 'Magsusz_korrigiert')
+    out_path = os.path.join(rel_path, 'MagSusz_korrigiert')
     if not os.path.exists(out_path):
         os.mkdir(out_path)
 
@@ -42,7 +42,7 @@ def process_directory(console=False):
 
         if console: print('.. processing file ' + file)
         filename = file_match.group(1)
-        full_path = os.path.join(rel_path, file)
+        full_path = os.path.join(rel_path, 'raw', file)
 
         do_corrections(filename, full_path, out_path)
         if console: print('.... created new file ' + filename + '_korr')

@@ -40,7 +40,7 @@ def process_directory(console=False):
 
         if console: print('.. processing file ' + file)
         filename = file_match.group(1)
-        full_path = os.path.join(rel_path, file)
+        full_path = os.path.join(rel_path, 'raw', file)
 
         do_corrections(filename, full_path, out_path)
         if console: print('.... created new file ' + filename + '_korr')
