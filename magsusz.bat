@@ -1,2 +1,2 @@
-.\venv\Scripts\python.exe .\src\magsusz.py
+python "%~dp0\src\magsusz.py"
 pause

@@ -1,2 +1,2 @@
-.\venv\Scripts\python.exe .\src\farbe.py
+python "%~dp0\src\farbe.py"
 pause
