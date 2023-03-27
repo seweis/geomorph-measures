@@ -14,8 +14,8 @@ def do_corrections(filename, full_path, out_path):
     data_korr = raw_data
     data_korr.insert(1, 'SI*10^5', data_korr["Vol. Susc.  Meas. in SI"].mul(10000))
 
-    data_disc = data_korr.loc[data_korr['Sample ID'].str.match(r'^ref.*', flags=re.IGNORECASE)]
-    data_korr = data_korr.loc[data_korr['Sample ID'].str.match(r'^(?!ref).*', flags=re.IGNORECASE)]
+    data_disc = data_korr.loc[data_korr['Sample ID'].str.match(r'^.*ref.*', flags=re.IGNORECASE)]
+    data_korr = data_korr.loc[data_korr['Sample ID'].str.match(r'(?!.*ref.*)', flags=re.IGNORECASE)]
 
     pat = re.compile("(.*_)(\\d*)(\\d{2})", flags=re.IGNORECASE)
     data_korr.insert(1, 'Tiefe', data_korr['Sample ID'].str.replace(pat, repl, regex=True).astype(float))
