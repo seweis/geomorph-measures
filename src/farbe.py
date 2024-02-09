@@ -16,7 +16,7 @@ def do_corrections(filename, full_path, out_path):
         ["Dateiname", "Glanzkomponente", "L*(D65)", "a*(D65)", "b*(D65)", "Munsell D65 Hue", "Munsell D65 Value",
          "Munsell D65 Chroma"]].reset_index(drop=True)
 
-    pat = re.compile("(.*#)(\\d*)(\\d{2})", flags=re.IGNORECASE)
+    pat = re.compile("(.*)(\\d{2})(\\d{2})", flags=re.IGNORECASE)
     data_korr.insert(1, 'Tiefe', data_korr['Dateiname'].str.replace(pat, repl, regex=True).astype(float))
 
     out_dir = os.path.join(out_path, filename + '_korr.xlsx')
